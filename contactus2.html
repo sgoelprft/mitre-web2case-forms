@@ -1,0 +1,59 @@
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+ function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+</script>
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
+
+<form action="https://mitre--mktgcloud2.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+
+<input type=hidden name='captcha_settings' value='{"keyname":"MKTG_WtC_Contact","fallback":"true","orgId":"00D3R0000008hUv","ts":""}'>
+<input type=hidden name="orgid" value="00D3R0000008hUv">
+<input type=hidden name="retURL" value="https://www.mitre.com">
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+<!--  these lines if you wish to test in debug mode.                          -->
+<!--  <input type="hidden" name="debug" value=1>                              -->
+<!--  <input type="hidden" name="debugEmail"                                  -->
+<!--  value="gshirish@salesforce.com">                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+First Name:<input  id="00N3R000000mCdb" maxlength="255" name="00N3R000000mCdb" size="20" type="text" /><br>
+
+Last Name:<input  id="00N3R000000mCdg" maxlength="255" name="00N3R000000mCdg" size="20" type="text" /><br>
+
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+
+<label for="company">Company/Organization</label><input  id="company" maxlength="80" name="company" size="20" type="text" /><br>
+
+Inquiry Topic:<select  id="00N3R000000mCdf" name="00N3R000000mCdf" title="Inquiry Topic"><option value="">--None--</option><option value="Media Inquiry">Media Inquiry</option>
+<option value="Speaker/Event Inquiry">Speaker/Event Inquiry</option>
+<option value="Government Inquiry">Government Inquiry</option>
+<option value="Copyright/Permissions">Copyright/Permissions</option>
+<option value="Recruiting/Employment">Recruiting/Employment</option>
+<option value="Technology Transfer">Technology Transfer</option>
+<option value="Partnership Inquiry">Partnership Inquiry</option>
+<option value="Website Related">Website Related</option>
+<option value="Website Accessibility">Website Accessibility</option>
+</select><br>
+
+<label for="subject">Subject of Your Inquiry:</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+
+Inquiry Text:<textarea  id="00N3R000000mCde" name="00N3R000000mCde" rows="5" type="text" wrap="soft"></textarea><br>
+<input id="recordType" type=hidden name="recordType" value="01261000000X6Qc">
+<input  id="00N3R000000mCdd" maxlength="120" name="00N3R000000mCdd" size="20" type="hidden" value="Contact"/><br>
+
+<div class="g-recaptcha" data-sitekey="6LfRdiYcAAAAAPVC4YEOs10QdFFO2I4nZ8rUuk6V"></div><br>
+<input type="submit" name="submit">
+
+</form>
